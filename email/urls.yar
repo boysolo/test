@@ -12,6 +12,7 @@ rule with_urls : mail {
                 $eml_01 = "From:"
                 $eml_02 = "To:"
                 $eml_03 = "Subject:"
+		$eml_04 = "Bcc:"
 
 		$url_regex = /https?:\/\/([\w\.-]+)([\/\w \.-]*)/
 	condition:
@@ -22,7 +23,7 @@ rule without_urls : mail {
 	meta:
 		author = "Antonio Sanchez <asanchez@hispasec.com>"
 		reference = "http://laboratorio.blogs.hispasec.com/"
-		description = "Rule to detect the no presence of any url"
+		description = "Rule to detect the no presence of any urls"
 	strings:
                 $eml_01 = "From:"
                 $eml_02 = "To:"
